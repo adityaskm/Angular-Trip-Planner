@@ -20,6 +20,7 @@ import { TimeframeComponent } from './shared/components/timeframe/timeframe.comp
 import { DistanceFormatterPipe } from './shared/pipes/distance-formatter.pipe';
 import { DurationFormatterPipe } from './shared/pipes/duration-formatter.pipe';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],
