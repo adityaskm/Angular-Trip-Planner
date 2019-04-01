@@ -13,6 +13,7 @@
       },
       "travelDuration": 0,
       "distance": 0,
+      "imgUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRZAAAA3JLbsSdsrSmDXcJrNl0VZ0M4dI9eiXx7XHAwnIF99ujopwAIo9lqouizTXTRx3EfnltMagTgNVSf5aHwMwmoJmuTGjehOCPXP-vcy7hIy8tVJFmQZODmRonZAPC8HiD2EhDzM1veERDMt7gEIboWO4o-GhQPdwNWtjvwRvTU8z60WWpeITN9CQ&3u100&4u100&5m1&2e1&callback=none&key=AIzaSyBxXPW1Rsikohh_14MoNr9_4YCWfnawV7Y&token=124540",
       "dropped": false
     }
   ]

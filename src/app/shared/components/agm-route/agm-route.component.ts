@@ -8,18 +8,17 @@ import {
   OnChanges
 } from '@angular/core';
 import { GoogleMapsAPIWrapper, LatLngLiteral } from '@agm/core';
-
 @Component({
   selector: 'app-agm-route',
   template: ''
 })
 export class AgmRouteComponent implements OnChanges, OnDestroy {
   @Input()
-  origin;
+  origin: LatLngLiteral;
   @Input()
-  destination;
+  destination: LatLngLiteral;
   @Input()
-  waypoints;
+  waypoints: LatLngLiteral[];
 
   directionsDisplay: any;
 
@@ -31,6 +30,12 @@ export class AgmRouteComponent implements OnChanges, OnDestroy {
     this.plotRoute();
   }
 
+  /**
+   * @description First of all clear the previous and plot the currently supplied waypoints route.
+   * We currently take the Travelmode as driving, however, many options can be configured as wanted.
+   * @author Aditya Mudgerikar
+   * @date 2019-04-01
+   */
   plotRoute() {
     if (this.directionsDisplay !== undefined) {
       this.directionsDisplay.setMap(null);
@@ -72,6 +77,11 @@ export class AgmRouteComponent implements OnChanges, OnDestroy {
     });
   }
 
+  /**
+   * @description Clear the route from the Map when this route is destroyed
+   * @author Aditya Mudgerikar
+   * @date 2019-04-01
+   */
   ngOnDestroy() {
     this.directionsDisplay.setMap(null);
   }

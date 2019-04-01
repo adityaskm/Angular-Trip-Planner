@@ -7,8 +7,11 @@ export class ConstantsService {
   constructor() {}
 
   readonly mapConstants = {
-    lat: 51.274176,
-    lng: 10.318448,
-    zoom: 6
+    lat: 48.1351253,
+    lng: 11.581980499999986,
+    zoom: 12
   };
+
+  timeFrameInterval = 60;
+  placeDefaultDuration = 60;
 }

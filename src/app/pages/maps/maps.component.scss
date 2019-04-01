@@ -57,8 +57,6 @@
 
 .planner-container {
   padding: 10px 20px 20px 20px;
-  // background-color: #e6e6e6;
-  // box-shadow: 0 0 6px #a7a7a7;
   box-shadow: 0px 0px 8px 1px #989696;
   border-radius: 9px;
   margin: 0px 10px;
@@ -88,6 +86,16 @@
       position: absolute;
       background-color: #dedede;
       height: 100%;
+      white-space: nowrap;
+      overflow: hidden !important;
+      .place-travel-text {
+        text-align: left;
+        display: inline-flex;
+        overflow: hidden !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
     }
     .place-timeline {
       position: absolute;

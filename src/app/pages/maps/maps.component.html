@@ -90,36 +90,41 @@
           'planner-invalid': !timeline.valid
         }"
         droppable
+        [dropEnabled]="timeline.valid"
         (onDrop)="placeDroppedinTimeline($event.dragData)"
       >
-        <div
-          class="place-timeline"
-          *ngFor="let timelinePlace of timelinePlaces"
-          draggable
-          [dragImage]="'/assets/images/draggable-place-24px.svg'"
-          [dragData]="timelinePlace"
-        >
-          <div
-            class="place-travel flexDiv"
-            [style.width]="calculateWidthofTravelTime(timelinePlace)"
-            [style.left]="calculatePositionofTravelTime(timelinePlace)"
-          >
-            <i aria-hidden="true" class="material-icons">
-              near_me
-            </i>
-            {{ timelinePlace.travelDuration | durationFormatter }} |
-            {{ timelinePlace.distance | distanceFormatter }}
-          </div>
-          <div
-            class="place-placeholder flexDiv"
-            [style.left]="calculatePositionOfPlace(timelinePlace)"
-            [style.width]="calculateWidthofPlace(timelinePlace)"
-          >
-            <i aria-hidden="true" class="material-icons timeline-place-icon">
-              place
-            </i>
-            {{ timelinePlace.name }}
-          </div>
+        <div class="place-timeline">
+          <ng-container *ngFor="let timelinePlace of timelinePlaces">
+            <div
+              class="place-travel flexDiv"
+              [style.width]="calculateWidthofTravelTime(timelinePlace)"
+              [style.left]="calculatePositionofTravelTime(timelinePlace)"
+              draggable
+              [dragImage]="'/assets/images/draggable-place-24px.svg'"
+              [dragData]="timelinePlace"
+            >
+              <div class="place-travel-text">
+                <i aria-hidden="true" class="material-icons">
+                  near_me
+                </i>
+                {{ timelinePlace.travelDuration | durationFormatter }} |
+                {{ timelinePlace.distance | distanceFormatter }}
+              </div>
+            </div>
+            <div
+              class="place-placeholder flexDiv"
+              [style.left]="calculatePositionOfPlace(timelinePlace)"
+              [style.width]="calculateWidthofPlace(timelinePlace)"
+              draggable
+              [dragImage]="'/assets/images/draggable-place-24px.svg'"
+              [dragData]="timelinePlace"
+            >
+              <i aria-hidden="true" class="material-icons timeline-place-icon">
+                place
+              </i>
+              {{ timelinePlace.name }}
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>

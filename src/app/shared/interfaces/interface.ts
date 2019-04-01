@@ -18,6 +18,7 @@ export interface Place {
   travelDuration: number;
   distance: number;
   dropped: boolean;
+  imgUrl: string;
 }
 
 export class Place {
@@ -33,4 +34,5 @@ export class Place {
   travelDuration = 0;
   distance = 0;
   dropped = false;
+  imgUrl = '';
 }

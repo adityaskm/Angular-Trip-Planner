@@ -21,6 +21,11 @@ export class TimeframeComponent implements OnInit {
     this.divideTimeFrameByHours();
   }
 
+  /**
+   * @description Divide the Supplied Start Time and End Time into 2 hr intervls
+   * @author Aditya Mudgerikar
+   * @date 2019-04-01
+   */
   divideTimeFrameByHours() {
     let currentTimeMinutes = this.timeCalc.calculateMinutesFromTime(
       this.startTime

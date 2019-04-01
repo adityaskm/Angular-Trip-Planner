@@ -19,6 +19,7 @@ import { AgmRouteComponent } from './shared/components/agm-route/agm-route.compo
 import { TimeframeComponent } from './shared/components/timeframe/timeframe.component';
 import { DistanceFormatterPipe } from './shared/pipes/distance-formatter.pipe';
 import { DurationFormatterPipe } from './shared/pipes/duration-formatter.pipe';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { DurationFormatterPipe } from './shared/pipes/duration-formatter.pipe';
     AgmRouteComponent,
     TimeframeComponent,
     DistanceFormatterPipe,
-    DurationFormatterPipe,
+    DurationFormatterPipe
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { DurationFormatterPipe } from './shared/pipes/duration-formatter.pipe';
     NgDragDropModule.forRoot(),
     ReactiveFormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,17 @@
+.place-add-container {
+  position: relative;
+  .placeImage {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    // border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .place-name-container {
+    width: calc(100% - 110px);
+  }
+}
