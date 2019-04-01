@@ -1,4 +1,4 @@
-# maps
+# Angular Trip Place Planner
 
 This Project is a demo for A manual Trip Planning Solution.
 Demo: http://angular.inkpixels.in/
