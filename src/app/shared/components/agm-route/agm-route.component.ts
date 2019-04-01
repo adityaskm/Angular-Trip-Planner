@@ -49,7 +49,6 @@ export class AgmRouteComponent implements OnChanges, OnDestroy {
     this.gmapsApi.getNativeMap().then(map => {
       this.directionsDisplay = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
-        // preserveViewport: true,
         polylineOptions: { strokeColor: '#1e69ba' }
       });
       const directionsService = new google.maps.DirectionsService();
