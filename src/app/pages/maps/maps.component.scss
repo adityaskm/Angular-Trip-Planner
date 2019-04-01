@@ -1,0 +1,126 @@
+.half-page {
+  height: calc(50vh - 100px);
+}
+.container-rounded-shadow {
+  border-radius: 9px;
+  box-shadow: 0px 0px 8px 1px #989696;
+  overflow: hidden;
+  margin: 20px 0px;
+}
+.page-container {
+  padding: 10px 0px;
+}
+.container-scroll {
+  overflow: auto;
+  height: calc(100% - 26px);
+  padding: 5px;
+}
+.container-title {
+  box-shadow: 0px 8px 12px -10px #9a9a9a;
+  color: #777777;
+  text-align: center;
+  padding: 2px;
+  position: relative;
+}
+
+.place-add-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.place-add-icon:hover {
+  color: #328de0;
+}
+
+.place {
+  background-color: #e8e8e8;
+  padding: 10px 20px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 4px 1px #989696;
+  margin: 10px;
+  // To show 3 dots if text overflows
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.place-name {
+  color: orange;
+  font-size: 16px;
+}
+
+.place-address {
+  color: rgb(182, 182, 182);
+  font-size: 14px;
+}
+
+.planner-container {
+  padding: 10px 20px 20px 20px;
+  // background-color: #e6e6e6;
+  // box-shadow: 0 0 6px #a7a7a7;
+  box-shadow: 0px 0px 8px 1px #989696;
+  border-radius: 9px;
+  margin: 0px 10px;
+
+  .planner-card {
+    padding: 20px;
+    border-radius: 9px;
+    background-color: #2886b3;
+  }
+  .planner {
+    height: 70px;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+    position: relative;
+    background-color: white;
+    border-radius: 9px;
+    transition: 1s ease;
+    overflow: hidden;
+    app-timeframe {
+      width: 100%;
+      position: absolute;
+      top: 0px;
+    }
+    .place-travel {
+      border: 1.5px solid #8c6e00;
+      border-radius: 5px;
+      position: absolute;
+      background-color: #dedede;
+      height: 100%;
+    }
+    .place-timeline {
+      position: absolute;
+      height: calc(100% - 20px);
+      width: 100%;
+    }
+    .place-placeholder {
+      height: 100%;
+      border: 1.5px solid rgb(3, 110, 197);
+      border-radius: 5px;
+      position: absolute;
+    }
+  }
+  .planner-valid {
+    box-shadow: 0px 0px 8px 1px #989696;
+  }
+  .planner-invalid {
+    box-shadow: 0px 0px 8px 1px #e01818;
+  }
+
+  .planner-title {
+    color: orange;
+    font-size: 16px;
+  }
+}
+
+.flexDiv {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-place-icon {
+  color: #086592;
+}

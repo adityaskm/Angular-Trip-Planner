@@ -1,0 +1,28 @@
+<ul class="timeframe_ul">
+  <li
+    class="timeline_li"
+    *ngFor="let time of times; let i = index"
+    [style.left]="
+      'calc(' +
+      (((this.duration - remainingDuration) * 97) /
+        this.duration /
+        (times.length - 1)) *
+        i +
+      '% - 6px)'
+    "
+  >
+    {{ time }}
+   </li>
+  <li
+    class="timeline_li"
+    *ngIf="lasttime !== ''"
+    [style.left]="
+      'calc(' +
+      ((60 * (this.minutes.length - 1) + this.remainingDuration) * 97) /
+        this.duration +
+      '% - 6px)'
+    "
+  >
+    {{ lasttime }}
+  </li>
+</ul>

@@ -1,0 +1,127 @@
+<div class="page-container">
+  <div class="row">
+    <div class="col l8 push-l4 m6 push-m6 s12">
+      <div class="container-rounded-shadow">
+        <agm-map
+          class="half-page"
+          [latitude]="constants.mapConstants.lat"
+          [longitude]="constants.mapConstants.lng"
+          [zoom]="constants.mapConstants.zoom"
+        >
+          <agm-marker
+            *ngFor="let place of places"
+            [latitude]="place.geocodes.lat"
+            [longitude]="place.geocodes.lng"
+          >
+          </agm-marker>
+          <agm-marker
+            [latitude]="timeline.geocodes.lat"
+            [longitude]="timeline.geocodes.lng"
+            [iconUrl]="
+              'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000'
+            "
+          ></agm-marker>
+          <ng-container *ngIf="timelinePlaces.length > 0">
+            <app-agm-route
+              [origin]="timeline.geocodes"
+              [destination]="timelinePlaces[timelinePlaces.length - 1].geocodes"
+              [waypoints]="timeLineMarkers"
+            >
+            </app-agm-route>
+            <agm-marker
+              *ngFor="let place of timelinePlaces; let i = index"
+              [latitude]="place.geocodes.lat"
+              [longitude]="place.geocodes.lng"
+              [iconUrl]="
+                'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' +
+                (i + 1) +
+                '|FF0000|000000'
+              "
+            ></agm-marker>
+          </ng-container>
+        </agm-map>
+      </div>
+    </div>
+    <div class="col l4 pull-l8 m6 pull-m6 s12">
+      <div class="container-rounded-shadow half-page">
+        <div class="container-title">
+          Places To Visit
+          <i
+            aria-hidden="true"
+            class="material-icons place-add-icon"
+            (click)="openPlaceModal()"
+          >
+            add
+          </i>
+        </div>
+        <div
+          class="container-scroll"
+          droppable
+          (onDrop)="placeDroppedinOpenSpace($event.dragData)"
+        >
+          <div
+            class="place"
+            *ngFor="let place of places"
+            draggable
+            [dragData]="place"
+          >
+            <span class="place-name">{{ place.name }} </span>
+            <span class="place-address">{{ place.address }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="planner-container card container-rounded-shadow">
+    <div class="center-align">
+      <span class="planner-title"> Plan Your Trip</span>
+    </div>
+    <div class="card planner-card">
+      <div class="planner-timeframe">
+        <app-timeframe
+          [startTime]="'08:00'"
+          [endTime]="'16:00'"
+        ></app-timeframe>
+      </div>
+      <div
+        class="row planner"
+        [ngClass]="{
+          'planner-valid': timeline.valid,
+          'planner-invalid': !timeline.valid
+        }"
+        droppable
+        (onDrop)="placeDroppedinTimeline($event.dragData)"
+      >
+        <div
+          class="place-timeline"
+          *ngFor="let timelinePlace of timelinePlaces"
+          draggable
+          [dragImage]="'/assets/images/draggable-place-24px.svg'"
+          [dragData]="timelinePlace"
+        >
+          <div
+            class="place-travel flexDiv"
+            [style.width]="calculateWidthofTravelTime(timelinePlace)"
+            [style.left]="calculatePositionofTravelTime(timelinePlace)"
+          >
+            <i aria-hidden="true" class="material-icons">
+              near_me
+            </i>
+            {{ timelinePlace.travelDuration | durationFormatter }} |
+            {{ timelinePlace.distance | distanceFormatter }}
+          </div>
+          <div
+            class="place-placeholder flexDiv"
+            [style.left]="calculatePositionOfPlace(timelinePlace)"
+            [style.width]="calculateWidthofPlace(timelinePlace)"
+          >
+            <i aria-hidden="true" class="material-icons timeline-place-icon">
+              place
+            </i>
+            {{ timelinePlace.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

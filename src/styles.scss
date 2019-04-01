@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.btn {
+  background-color: rgb(12, 115, 199);
+  margin: 0px 5px;
+}
+
+.btn:hover {
+  background-color: rgb(12, 128, 223);
+  box-shadow: 0px 0px 2px 2px rgb(162, 180, 195);
+}
+
+.modal-footer {
+  text-align: right;
+}

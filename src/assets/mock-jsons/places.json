@@ -1,0 +1,19 @@
+{
+  "hasError": false,
+  "error": null,
+  "data": [
+    {
+      "name": "Munich Airport",
+      "address": "Munich Airport (MUC), Nordallee, München, Germany",
+      "startTime": "",
+      "endTime": "",
+      "geocodes": {
+        "lat": 48.3536621,
+        "lng": 11.775027899999941
+      },
+      "travelDuration": 0,
+      "distance": 0,
+      "dropped": false
+    }
+  ]
+}

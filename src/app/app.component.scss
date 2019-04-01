@@ -1,0 +1,17 @@
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9;
+}
+
+app-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  z-index: 9;
+}
+
+.page-container {
+  padding: 64px 0px 26px 0px;
+}
