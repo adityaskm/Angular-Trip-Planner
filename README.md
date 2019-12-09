@@ -1,7 +1,6 @@
 # Angular Trip Place Planner
 
 This Project is a demo for A manual Trip Planning Solution.
-Demo: http://angular.inkpixels.in/
 
 You can Drag and Drop Placews from the Left (The Open Places View) Onto the Timeline. The App Calculates the distance between the Person (Set to munich) or the previous Place and the Newly Added Place.
 This app is sectioned into a main page: The maps component, and a shared folder containing the rest of the components, directives, interfaces, pipes and services.
