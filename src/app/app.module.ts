@@ -38,7 +38,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.googleMapsAPIKey
+      apiKey: environment.googleMapsAPIKey,
+      libraries: ['places']
     }),
     AgmDirectionModule,
     HttpClientModule,
